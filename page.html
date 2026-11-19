@@ -10,7 +10,7 @@ html, body { width: 1024px; height: 1024px; margin: 0; overflow: hidden; }
 body { background: #F7F2E7; color: #111; font-family: "DejaVu Sans", Arial, sans-serif; padding: 20px 24px; }
 .page { width: 976px; display: flow-root; overflow: hidden; transform-origin: top left; }
 .rule { border: 0; border-top: 2px solid #111; margin: 0; }
-.masthead { background: #0B1F3A; color: #fff; text-align: center; margin: 0 -24px; padding: 4px 24px 6px; }
+.masthead { background: #0B1F3A; color: #fff; text-align: center; margin: 0 -24px; padding: 3px 24px 5px; }
 h1 { color: #E8C15A; font: 900 16px/1.15 "DejaVu Sans", Arial, sans-serif; letter-spacing: 2.5px; margin: 0 0 2px; }
 .date-row { display: grid; grid-template-columns: 140px minmax(0, 1fr) 140px; align-items: center; }
 .date-badge { justify-self: start; background: #C0392B; color: #fff; padding: 5px 8px; font: 800 10px/1.15 "DejaVu Sans", Arial, sans-serif; letter-spacing: .55px; white-space: nowrap; }
@@ -18,16 +18,19 @@ h1 { color: #E8C15A; font: 900 16px/1.15 "DejaVu Sans", Arial, sans-serif; lette
 .subline { color: #E8C15A; font: italic 13px/1.15 "DejaVu Serif", Georgia, serif; margin: 1px 0 3px; }
 .dek { color: #E8C15A; font: 700 10px/1.15 "DejaVu Sans", Arial, sans-serif; letter-spacing: 1.2px; text-transform: uppercase; }
 .masthead + .rule { border-top: 1px solid #E8C15A; margin: 0 -24px; }
+.region-tabs { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 1px; height: 30px; background: #fff; color: #fff; text-align: center; }
+.region-tab { display: grid; align-content: center; background: var(--tab-ink); font: 800 9px/10px "DejaVu Sans", Arial, sans-serif; letter-spacing: .6px; }
+.region-tab strong { font-size: 20px; line-height: 20px; font-weight: 900; letter-spacing: 0; }
 .strap { border-top: 1px solid #111; border-bottom: 1px solid #111; margin: 5px 0 9px; padding: 5px 0; text-align: center; font: 800 12px/1.2 "DejaVu Sans", Arial, sans-serif; letter-spacing: .16px; }
 .lead { border-bottom: 2px solid #111; padding: 0 0 6px; display: grid; grid-template-columns: 1fr 220px; gap: 12px; }
 .kicker { color: #9b1c1c; font: 800 10px/1.2 "DejaVu Sans", Arial, sans-serif; letter-spacing: 1px; text-transform: uppercase; margin: 1px 0 4px; }
 h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; margin: 0 0 5px; }
 .summary { font: 12px/1.3 "DejaVu Sans", Arial, sans-serif; margin: 0; }
-.skyline { width: 220px; height: 112px; align-self: center; display: block; }
+.skyline { width: 220px; height: 128px; align-self: center; display: block; }
 .caption { border-top: 1px solid #111; padding-top: 3px; margin-top: 3px; font: 700 9px/1.15 "DejaVu Sans", Arial, sans-serif; letter-spacing: .4px; text-align: right; }
 .proof { font: 800 9px/1.2 "DejaVu Sans", Arial, sans-serif; color: #393630; white-space: nowrap; }
-.tier-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 8px; margin: 5px 0; }
-.tier-card { --section-ink: #a54a16; border-top: 4px solid var(--section-ink); background: #FFFEF9; padding: 2px 6px; display: grid; grid-template-columns: minmax(0, 1fr) 100px; gap: 5px; }
+.tier-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px 8px; margin: 5px 0; }
+.tier-card { --section-ink: #a54a16; border-top: 6px solid var(--section-ink); background: #FFFEF9; padding: 2px 6px; display: grid; grid-template-columns: minmax(0, 1fr) 100px; gap: 5px; }
 .tier-card.ukraine { --section-ink: #455e70; }
 .tier-card.americas { --section-ink: #654183; }
 .tier-card.business { --section-ink: #116661; }
@@ -35,22 +38,23 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
 .tier-card h2 { font-size: 15px; margin-bottom: 3px; }
 .tier-card .summary { font-size: 10.5px; line-height: 1.15; }
 .thumb { margin: 0; align-self: center; color: var(--section-ink); }
-.thumb svg { display: block; width: 100%; height: 50px; }
+.thumb svg { display: block; width: 100%; height: 64px; }
 .thumb figcaption { color: #292622; font: 700 8px/1.1 "DejaVu Sans", Arial, sans-serif; }
-.thumb-senate { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px; }
-.thumb-senate figcaption { display: grid; grid-template-rows: repeat(2, 14px); align-items: center; }
-.thumb-senate figcaption span:first-child { color: #245b8f; }
-.thumb-senate figcaption span:last-child { color: #C0392B; }
-.section-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 2px 6px; }
+.thumb-senate { position: relative; }
+.thumb-senate figcaption { position: absolute; inset: 3px 6px; display: grid; grid-template-rows: repeat(2, 28px); font-size: 9px; font-weight: 900; }
+.thumb-senate figcaption span:first-child { color: #73B9FF; }
+.thumb-senate figcaption span:last-child { color: #FF8678; }
+.section-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px 6px; }
 .section-card { grid-column: span 3; border-left: 3px solid var(--ink); border-top: 3px solid var(--ink); background: #FFFEF9; padding: 2px 4px; }
 .section-card:nth-child(n+5) { grid-column: span 4; }
-.section-card .kicker { color: #9b1c1c; font-size: 8px; letter-spacing: 0; margin: 0 0 2px; }
+.section-card .kicker { background: var(--ink); color: #fff; font-size: 8px; letter-spacing: 0; margin: -2px -4px 2px; padding: 2px 4px; }
 .section-card h2 { font-size: 12px; letter-spacing: 0; margin-bottom: 2px; }
 .section-card .summary { font-size: 10px; line-height: 1.16; }
-.section-card svg { float: right; width: 31px; height: 28px; margin: 0 0 1px 4px; color: var(--ink); fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-.panel { margin-top: 6px; border-top: 1px solid #111; padding-top: 3px; }
+.section-card svg { float: right; width: 44px; height: 40px; margin: 0 0 1px 4px; fill: none; stroke: #fff; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.section-card .icon-tile { fill: var(--ink); stroke: none; }
+.panel { margin-top: 4px; border-top: 1px solid #111; padding-top: 3px; }
 .panel-title { font-size: 12px; letter-spacing: .6px; margin-bottom: 3px; }
-.world-map { display: block; width: 100%; height: 72px; background: #ede9df; }
+.world-map { display: block; width: 100%; height: 72px; background: #EADDC5; }
 .world-map .land { fill: url(#land-dots); stroke: #8e806c; stroke-width: 1; stroke-linejoin: round; }
 .world-map .leader { fill: none; stroke: #782726; stroke-width: .8; }
 .world-map .pins { fill: #fff; font: 700 8px "DejaVu Sans", Arial, sans-serif; text-anchor: middle; }
@@ -88,6 +92,16 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
     <div class="dek">42 stories · 7 regions · All from Wednesday</div>
   </header>
   <hr class="rule">
+  <div class="region-tabs" role="group" aria-label="Story counts by region">
+    <div class="region-tab" style="--tab-ink:#245b8f">AMERICAS<strong>10</strong></div>
+    <div class="region-tab" style="--tab-ink:#173b67">EUROPE<strong>9</strong></div>
+    <div class="region-tab" style="--tab-ink:#C0392B">MIDDLE EAST<strong>7</strong></div>
+    <div class="region-tab" style="--tab-ink:#27864A">ASIA-PACIFIC<strong>4</strong></div>
+    <div class="region-tab" style="--tab-ink:#a54a16">AFRICA<strong>1</strong></div>
+    <div class="region-tab" style="--tab-ink:#116661">BUSINESS &amp; TECH<strong>4</strong></div>
+    <div class="region-tab" style="--tab-ink:#b33d7c">CULTURE<strong>4</strong></div>
+    <div class="region-tab" style="--tab-ink:#455e70">WORLD<strong>3</strong></div>
+  </div>
   <div class="strap">XI GREETS TRUMP IN SHENZHEN · IRAN STRIKES KUWAIT AND BAHRAIN · JEFFRIES PICKED AS SPEAKER</div>
   <article class="lead">
     <div>
@@ -96,22 +110,25 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
       <p class="summary">Xi Jinping personally greets Donald Trump on the tarmac at Shenzhen Baoan airport — a handshake and hug at the foot of Air Force One, believed to be the first time Xi has personally greeted an arriving US president — as Trump lands for APEC. Xi meets Vladimir Putin in the city the same day; Trump and Putin shake hands, their first face-to-face encounter since the August 2025 Alaska summit. Xi delivers a keynote at the APEC CEO Summit and hosts a welcome banquet in the evening. The trilateral summit is Thursday 19 Nov. <span class="proof">[Le Monde]</span></p>
     </div>
     <div>
-      <svg class="skyline" viewBox="0 0 220 112" role="img" aria-label="Schematic Shenzhen skyline">
-        <rect x="0" y="0" width="220" height="112" fill="#DCEBF4"/>
+      <svg class="skyline" viewBox="0 0 220 128" role="img" aria-label="Schematic Shenzhen skyline">
+        <rect width="220" height="128" fill="#2E86C1"/>
+        <circle cx="162" cy="45" r="32" fill="#FF8A24"/>
+        <g transform="translate(0 16)">
         <path d="M0 94H220" stroke="#243b53" stroke-width="2"/>
         <g stroke="#243b53" stroke-width="1">
-          <path d="M8 94V58h18v36zM11 53h12v5H11zM14 42h6v11h-6z" fill="#536E84"/>
-          <path d="M34 94V45h26v49zM39 37h16v8H39zM45 28h5v9h-5z" fill="#294B68"/>
-          <path d="M66 94V61h21v33zM71 54h11v7H71z" fill="#738A9B"/>
-          <path d="M93 94V26h31v68zM99 18h19v8H99zM106 7h5v11h-5z" fill="#183451"/>
-          <path d="M131 94V48h24v46zM136 40h14v8h-14zM141 32h5v8h-5z" fill="#3C617E"/>
-          <path d="M164 94V57h18v37zM168 49h10v8h-10z" fill="#607C91"/>
-          <path d="M188 94V38h22v56zM193 30h12v8h-12zM197 21h4v9h-4z" fill="#263F5A"/>
+          <path d="M8 94V58h18v36zM11 53h12v5H11zM14 42h6v11h-6z" fill="#214D78"/>
+          <path d="M34 94V45h26v49zM39 37h16v8H39zM45 28h5v9h-5z" fill="#103762"/>
+          <path d="M66 94V61h21v33zM71 54h11v7H71z" fill="#345577"/>
+          <path d="M93 94V26h31v68zM99 18h19v8H99zM106 7h5v11h-5z" fill="#0B1F3A"/>
+          <path d="M131 94V48h24v46zM136 40h14v8h-14zM141 32h5v8h-5z" fill="#164878"/>
+          <path d="M164 94V57h18v37zM168 49h10v8h-10z" fill="#345577"/>
+          <path d="M188 94V38h22v56zM193 30h12v8h-12zM197 21h4v9h-4z" fill="#102B51"/>
         </g>
-        <g stroke="#E8C15A" stroke-width="1.5">
-          <path d="M14 65v24m8-24v24M43 51v38m9-38v38M102 33v54m11-54v54M138 54v34m9-34v34M195 44v42m9-42v42"/>
+        <g stroke="#FFD34F" stroke-width="3" stroke-dasharray="4 3">
+          <path d="M14 65v24m8-24v24M43 51v38m9-38v38M73 67v21m7-21v21M102 33v54m11-54v54M138 54v34m9-34v34M170 63v27m7-27v27M195 44v42m9-42v42"/>
         </g>
-        <path d="M0 100q28-5 55 0t55 0t55 0t55 0v12H0z" fill="#9b1c1c" opacity=".85"/>
+        <path d="M0 100q28-5 55 0t55 0t55 0t55 0v12H0z" fill="#C0392B"/>
+        </g>
       </svg>
       <div class="caption">SHENZHEN · APEC HOST CITY</div>
     </div>
@@ -124,14 +141,14 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
         <p class="summary">Iran struck Kuwait and Bahrain after the US hit a missile site on Qeshm Island. Kuwait engaged drones after Iran said it targeted Ali Al Salem Air Base, and Bahrain reported intercepting several attacks. <span class="proof">[WSJ]</span></p>
       </div>
       <figure class="thumb">
-        <svg viewBox="0 0 112 60" aria-hidden="true">
-          <rect width="112" height="60" fill="#A9D5E8"/>
-          <path d="M0 0h112v10l-14 1-9 7-12-2-7 8-12-1-9 8-14-1-7 7-14-2L0 41z" fill="#D9C49B"/>
-          <g fill="none" stroke="#C0392B" stroke-width="1.8">
+        <svg viewBox="0 0 112 60" preserveAspectRatio="none" aria-hidden="true">
+          <rect width="112" height="60" fill="#1B4F72"/>
+          <path d="M0 0h112v10l-14 1-9 7-12-2-7 8-12-1-9 8-14-1-7 7-14-2L0 41z" fill="#E8C87A"/>
+          <g fill="none" stroke="#EF4436" stroke-width="2.6">
             <circle cx="31" cy="30" r="24"/><circle cx="31" cy="30" r="16"/><circle cx="31" cy="30" r="8"/>
             <path d="M7 30h48M31 6v48M31 30l17-17"/>
           </g>
-          <path d="M82 16l3 10 19 8v4l-19-4v9l6 4v3l-9-3-9 3v-3l6-4v-9l-19 4v-4l19-8z" fill="#53697D" stroke="#32495F" stroke-width="1.2"/>
+          <path d="M82 16l3 10 19 8v4l-19-4v9l6 4v3l-9-3-9 3v-3l6-4v-9l-19 4v-4l19-8z" fill="#fff" stroke="#102D49" stroke-width="1.2"/>
           <circle cx="42" cy="19" r="2.5" fill="#C0392B"/>
         </svg>
       </figure>
@@ -143,11 +160,11 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
         <p class="summary">Saudi-led coalition launches major airstrikes against Houthi targets in Yemen on Wednesday — the coalition says it struck 60 Houthi targets — after Iran's Gulf strikes; Houthis answer with missiles toward Riyadh and the coalition says it intercepted a missile heading for Riyadh; Saudi Arabia, Qatar and the UAE condemn the Iranian attacks on Kuwait and Bahrain. <span class="proof">[AP]</span></p>
       </div>
       <figure class="thumb">
-        <svg viewBox="0 0 112 60" aria-hidden="true">
-          <rect width="112" height="60" fill="#DCEBF4"/>
-          <path d="M8 15l28 8-11 6-9-3zM35 23l15 8-9 3-12-5zM77 10l4 12 23 9v4l-23-4v12l7 4v3l-11-4-11 4v-3l7-4V31l-23 4v-4l23-9z" fill="#53697D" stroke="#354B5D" stroke-width="1"/>
-          <path d="M3 15l5 1-4 3zm28 7 4 1-3 3zm28 7 5-1-4 3z" fill="#E87532"/>
-          <path d="M4 51q8-5 16 0t16 0t16 0t16 0t16 0t16 0" fill="none" stroke="#7894A6" stroke-width="1.5"/>
+        <svg viewBox="0 0 112 60" preserveAspectRatio="none" aria-hidden="true">
+          <rect width="112" height="60" fill="#E87532"/>
+          <path d="M0 51q8-4 16 0t16 0t16 0t16 0t16 0t16 0t16 0v9H0z" fill="#122F49"/>
+          <path d="M8 15l28 8-11 6-9-3zM35 23l15 8-9 3-12-5zM77 10l4 12 23 9v4l-23-4v12l7 4v3l-11-4-11 4v-3l7-4V31l-23 4v-4l23-9z" fill="#243B53" stroke="#14273B" stroke-width="1"/>
+          <path d="M10 16 2 12l3 6 10 4zM32 25l-8-4 3 6 7 3zM75 46h5l-3 8z" fill="#FFAA18" stroke="#FFE06B" stroke-width="1.2"/>
         </svg>
       </figure>
     </article>
@@ -158,10 +175,10 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
         <p class="summary">Democrat Mary Peltola defeated Republican incumbent Dan Sullivan in Alaska. The result gives Democrats a projected 56–44 majority in the incoming Senate. <span class="proof">[AP]</span></p>
       </div>
       <figure class="thumb thumb-senate">
-        <svg viewBox="0 0 64 60" aria-hidden="true">
-          <path d="M4 14v32" stroke="#263849" stroke-width="2"/>
-          <rect x="4" y="18" width="56" height="10" fill="#245b8f"/>
-          <rect x="4" y="32" width="44" height="10" fill="#C0392B"/>
+        <svg viewBox="0 0 100 64" aria-hidden="true">
+          <rect width="100" height="64" fill="#0B1F3A"/>
+          <rect x="6" y="15" width="84" height="13" fill="#2E7CD6"/>
+          <rect x="6" y="43" width="66" height="13" fill="#E74C3C"/>
         </svg>
         <figcaption><span>DEM 56</span><span>REP 44</span></figcaption>
       </figure>
@@ -173,14 +190,16 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
         <p class="summary">House Democrats nominated Hakeem Jeffries by secret ballot on Wednesday, 251–11. He would be the first Black US Speaker if the full House elects him in January. <span class="proof">[WaPo]</span></p>
       </div>
       <figure class="thumb">
-        <svg viewBox="0 0 112 60" aria-hidden="true">
-          <path d="M57 51V35h43v16zM61 34a17 17 0 0 1 34 0z" fill="#355A7E" stroke="#183451" stroke-width="2"/>
-          <g fill="none" stroke="#183451" stroke-width="2">
-            <path d="M52 52h53M54 34h49M66 39v9m12-9v9m12-9v9"/>
+        <svg viewBox="0 0 112 60" preserveAspectRatio="none" aria-hidden="true">
+          <rect width="112" height="60" fill="#318ED1"/>
+          <path d="M57 51V35h43v16zM61 34a17 17 0 0 1 34 0z" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="2"/>
+          <g fill="none" stroke="#0B1F3A" stroke-width="2">
+            <path d="M52 52h53M54 34h49"/>
             <path d="M10 37h42v20H10zM10 37l6-8h30l6 8M22 33h18"/>
             <path d="m25 33-5-16 15-5 6 17"/>
           </g>
-          <path d="M54 34h49M77 17V9m0 3h7" fill="none" stroke="#C0392B" stroke-width="2.5"/>
+          <path d="M66 39v9m12-9v9m12-9v9" stroke="#7FB8E8" stroke-width="2"/>
+          <path d="M54 34h49M77 17V9m0 1h9" fill="none" stroke="#EF4436" stroke-width="3"/>
         </svg>
       </figure>
     </article>
@@ -191,10 +210,11 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
         <p class="summary">Nvidia halts sales of its US-approved H200 chips to China on Wednesday and creates a National Security and Export Control Oversight Committee; interim CEO Colette Kress says Nvidia sold $2.4bn of Hopper-line chips in China in Q3 but will no longer sell them there; shares fall despite the bumper quarter. The $115.84bn quarter was reported Tuesday 17 Nov. <span class="proof">[CNBC]</span></p>
       </div>
       <figure class="thumb">
-        <svg viewBox="0 0 112 60" aria-hidden="true">
-          <path d="M15 32 99 10V54H15Z" fill="#B9E0BE" opacity=".85"/>
-          <path d="M8 6v48h98" fill="none" stroke="#263849" stroke-width="1.5"/>
-          <path d="M15 32 99 10" fill="none" stroke="#1a7f37" stroke-width="2.8"/>
+        <svg viewBox="0 0 112 60" preserveAspectRatio="none" aria-hidden="true">
+          <rect width="112" height="60" fill="#fff"/>
+          <path d="M15 32 99 10V54H15Z" fill="#7ED491"/>
+          <path d="M8 6v48h98" fill="none" stroke="#263849" stroke-width="2"/>
+          <path d="M15 32 99 10" fill="none" stroke="#1a7f37" stroke-width="3.5"/>
           <circle cx="15" cy="32" r="3" fill="#1a7f37"/><circle cx="99" cy="10" r="3.5" fill="#1a7f37"/>
         </svg>
         <figcaption>Q3 revenue $115.84bn, reported 17 Nov</figcaption>
@@ -207,11 +227,11 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
         <p class="summary">Trump's Board of Peace accused Israel and Hamas of failing to meet commitments to end hostilities, Reuters reported Wednesday. The report warns the 2025 ceasefire could collapse without swift action. <span class="proof">[Reuters]</span></p>
       </div>
       <figure class="thumb">
-        <svg viewBox="0 0 112 60" aria-hidden="true">
-          <rect width="112" height="60" fill="#DCEBF4"/>
-          <path d="M78 25l9-4-10-2c-3-8-12-8-16 0l-4 7C44 25 33 18 24 7c-2 14 4 23 14 29L17 45l13 7 18-9c15 5 27-2 30-18z" fill="#FFFEF9" stroke="#7A8994" stroke-width="2" stroke-linejoin="round"/>
+        <svg viewBox="0 0 112 60" preserveAspectRatio="none" aria-hidden="true">
+          <rect width="112" height="60" fill="#7FB8E8"/>
+          <path d="M78 25l9-4-10-2c-3-8-12-8-16 0l-4 7C44 25 33 18 24 7c-2 14 4 23 14 29L17 45l13 7 18-9c15 5 27-2 30-18z" fill="#fff" stroke="#245B8F" stroke-width="2" stroke-linejoin="round"/>
           <circle cx="72" cy="20" r="1.5" fill="#34495A"/>
-          <path d="M84 22q13 3 20 17m-12-13q2 8 6 8m-2-6q6-5 10 0m-4 7q5-2 8 2" fill="none" stroke="#27864A" stroke-width="1.8"/>
+          <path d="M84 22q13 3 20 17m-12-13q2 8 6 8m-2-6q6-5 10 0m-4 7q5-2 8 2" fill="none" stroke="#176A35" stroke-width="3" stroke-linecap="round"/>
         </svg>
       </figure>
     </article>
@@ -219,43 +239,86 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
   <section id="section-stories" class="section-grid" aria-label="Section stories">
     <article class="section-card" style="--ink:#245b8f">
       <div class="kicker">8 · EUROPE · EU</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><path d="M7 4h18l6 6v19H7z" fill="#fffdf6"/><circle cx="30" cy="27" r="8" fill="#245b8f" stroke="#E8C15A"/><circle cx="30" cy="19" r="1" fill="#E8C15A" stroke="none"/><circle cx="35.5" cy="21.5" r="1" fill="#E8C15A" stroke="none"/><circle cx="38" cy="27" r="1" fill="#E8C15A" stroke="none"/><circle cx="35.5" cy="32.5" r="1" fill="#E8C15A" stroke="none"/><circle cx="30" cy="35" r="1" fill="#E8C15A" stroke="none"/><circle cx="24.5" cy="32.5" r="1" fill="#E8C15A" stroke="none"/><circle cx="22" cy="27" r="1" fill="#E8C15A" stroke="none"/><circle cx="24.5" cy="21.5" r="1" fill="#E8C15A" stroke="none"/><path d="M25 4v7h6M12 14h13m-13 5h9M27 27h6m-3-3v6"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <path d="M7 5h17l6 6v17H7zM24 5v7h6M12 16h12m-12 5h7"/>
+        <circle cx="30" cy="27" r="8" fill="var(--ink)" stroke="#FFD34F"/>
+        <path d="M27 27h6m-3-3v6" stroke="#FFD34F"/>
+      </svg>
       <h2>EU PROPOSES €45BN UKRAINE LOAN FOR 2027</h2>
       <p class="summary">The European Commission proposed up to €25bn in military aid and €20bn in budget support.</p>
     </article>
     <article class="section-card" style="--ink:#a54a16">
       <div class="kicker">9 · MIDDLE EAST · AID</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><rect x="9" y="21" width="6" height="6" fill="#E87532"/><rect x="16" y="21" width="6" height="6" fill="#C0392B"/><rect x="23" y="21" width="5" height="6" fill="#D8AA43"/><path d="M4 31V8h24v23M8 20h20v8H8zm20 1h6l5 5v2H28M9 12h14m-12 4h10"/><circle cx="13" cy="30" r="3" fill="#455e70"/><circle cx="33" cy="30" r="3" fill="#455e70"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <path d="M4 30V8h24v13h6l5 5v4H4zM9 12h14m-12 4h10"/>
+        <path d="M9 22h5v5H9zm8 0h5v5h-5z" fill="#FFD34F" stroke="none"/>
+        <circle cx="13" cy="30" r="3" fill="#fff"/>
+        <circle cx="33" cy="30" r="3" fill="#fff"/>
+      </svg>
       <h2>EREZ AID SCANNER GOES LIVE</h2>
       <p class="summary">COGAT says aid trucks are scanned at Erez, with cargo entering Gaza via Kerem Shalom after another inspection.</p>
     </article>
     <article class="section-card" style="--ink:#306849">
       <div class="kicker">10 · ASIA-PACIFIC · ASEAN</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><path d="M8 19h26l-4 14H12z" fill="#8EBF79"/><path d="M17 19v-5l-5-5m13 10v-5l5-5" fill="none" stroke="#D5A83D" stroke-width="2.2"/><path d="M7 34h28" stroke="#8B6A32" stroke-width="2"/><circle cx="11" cy="8" r="2" fill="#D5A83D"/><circle cx="31" cy="8" r="2" fill="#D5A83D"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <path d="M8 19h26l-4 13H12z" fill="#fff"/>
+        <path d="M17 19v-5l-5-5m13 10v-5l5-5M7 34h28"/>
+        <circle cx="11" cy="8" r="2.5" fill="#FFD34F" stroke="none"/>
+        <circle cx="31" cy="8" r="2.5" fill="#FFD34F" stroke="none"/>
+      </svg>
       <h2>MYANMAR TO REVIEW ASEAN TIES</h2>
       <p class="summary">President Min Aung Hlaing told parliament he would review ties, accusing ASEAN of unfair treatment.</p>
     </article>
     <article class="section-card" style="--ink:#922a31">
       <div class="kicker">11 · AFRICA · GUINEA</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><path d="M11 31l8-14 8 14z" fill="#B47A42"/><path d="M14 24l12-9M21 17l8-10M27 10l6 4" stroke="#922a31" stroke-width="2.3"/><path d="M9 12l6-5 6 5-6 4z" fill="#C66B4B"/><path d="M5 31h32M8 34h26" stroke="#754B36" stroke-width="2"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <path d="M11 31l8-14 8 14z" fill="#fff"/>
+        <path d="M14 24l12-9M21 17l8-10M27 10l6 4" stroke="#FFD34F"/>
+        <path d="M9 12l6-5 6 5-6 4z" fill="#FFD34F" stroke="none"/>
+        <path d="M5 32h32"/>
+      </svg>
       <h2>GUINEA MINING CRACKDOWN DISPLACES THOUSANDS</h2>
       <p class="summary">Guinea's crackdown on illegal mining triggers displacement and regional tensions.</p>
     </article>
     <article class="section-card" style="--ink:#654183">
       <div class="kicker">12 · AMERICAS · LUTNICK PROBE</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><path d="M5 5h23v26H5z" fill="#E8DDF1"/><path d="M10 11h13m-13 6h13m-13 6h8" stroke="#654183"/><circle cx="29" cy="27" r="7" fill="#E8C15A" stroke="#654183"/><path d="m34 32 5 5" stroke="#654183" stroke-width="2.3"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <path d="M6 5h22v25H6z" fill="#fff"/>
+        <path d="M11 11h12m-12 6h12m-12 6h8" stroke="var(--ink)"/>
+        <circle cx="29" cy="26" r="7" fill="#FFD34F" stroke="var(--ink)"/>
+        <path d="m34 31 5 4" stroke="#FFD34F"/>
+      </svg>
       <h2>HOUSE DEMOCRATS PROBE LUTNICK OVER NVIDIA CHIPS</h2>
       <p class="summary">House Democrats open an investigation into whether Commerce Secretary Howard Lutnick delayed restrictions on Nvidia chip exports to benefit his sons' investment firm, Cantor Fitzgerald; Democrats demand records on its Nvidia holdings and chip-export communications.</p>
     </article>
     <article class="section-card" style="--ink:#116661">
       <div class="kicker">13 · BUSINESS &amp; TECH · AI</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><rect x="10" y="8" width="22" height="22" rx="2" fill="#B9DDD5"/><path d="M15 4v4m6-4v4m6-4v4m-12 22v4m6-4v4m6-4v4M6 13h4m-4 6h4m-4 6h4m22-12h4m-4 6h4m-4 6h4"/><path d="m21 11 2 4 4 2-4 2-2 4-2-4-4-2 4-2z" fill="#E8C15A" stroke="#D39A23"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <rect x="10" y="8" width="22" height="22" rx="2"/>
+        <path d="M15 4v4m6-4v4m6-4v4m-12 22v4m6-4v4m6-4v4M6 13h4m-4 6h4m-4 6h4m22-12h4m-4 6h4m-4 6h4"/>
+        <path d="m21 11 2.5 5.5L29 19l-5.5 2.5L21 27l-2.5-5.5L13 19l5.5-2.5z" fill="#FFD34F" stroke="none"/>
+      </svg>
       <h2>GOOGLE ROLLS OUT GEMINI 4 NEON</h2>
       <p class="summary">Google is rolling it out to the paid Gemini API at $3 per million input tokens and to Pro and Ultra app subscribers.</p>
     </article>
     <article class="section-card" style="--ink:#963764">
       <div class="kicker">14 · CULTURE &amp; SPORT · MUSIC</div>
-      <svg viewBox="0 0 42 38" aria-hidden="true"><path d="M3 30 21 7l18 23z" fill="#E5A0C1"/><path d="M10 30V21h22v9" fill="#76508D"/><path d="M15 32v3m12-3v3" stroke="#76508D"/><path d="M21 7V2l8 2-8 2" fill="#E8C15A" stroke="#C99A35"/><circle cx="12" cy="20" r="1.2" fill="#E8C15A"/><circle cx="21" cy="18" r="1.2" fill="#E8C15A"/><circle cx="30" cy="20" r="1.2" fill="#E8C15A"/></svg>
+      <svg viewBox="0 0 42 38" aria-hidden="true">
+        <rect class="icon-tile" width="42" height="38" rx="4"/>
+        <path d="M4 30 21 8l17 22z" fill="#fff"/>
+        <path d="M10 30v-8h22v8" fill="var(--ink)" stroke="var(--ink)"/>
+        <path d="M15 32v3m12-3v3"/>
+        <path d="M21 9V3l8 2-8 2" fill="#FFD34F" stroke="#FFD34F"/>
+        <circle cx="15" cy="25" r="1.5" fill="#FFD34F" stroke="none"/>
+        <circle cx="21" cy="25" r="1.5" fill="#FFD34F" stroke="none"/>
+        <circle cx="27" cy="25" r="1.5" fill="#FFD34F" stroke="none"/>
+      </svg>
       <h2>GLASTONBURY 2027: STYLES, EILISH, FENDER</h2>
       <p class="summary">The first poster names Harry Styles, Billie Eilish and Sam Fender as headliners, with Cher in the legends slot.</p>
     </article>
@@ -264,8 +327,8 @@ h2 { font: 800 23px/1.08 "DejaVu Serif", Georgia, serif; letter-spacing: -.3px; 
     <h2 id="map-title" class="panel-title">WHERE IT HAPPENED</h2>
     <svg class="world-map" viewBox="0 0 500 110" role="img" aria-label="Schematic world map with numbered markers for stories 1 to 14">
       <defs>
-        <pattern id="land-dots" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#F3E8D4"/><circle cx="1.2" cy="1.2" r=".85" fill="#B99E78"/></pattern>
-        <circle id="map-pin" r="6.4" stroke="#fff" stroke-width=".7"/>
+        <pattern id="land-dots" width="5" height="5" patternUnits="userSpaceOnUse"><rect width="5" height="5" fill="#E9D3AB"/><circle cx="1.2" cy="1.2" r="1" fill="#9E7449"/></pattern>
+        <circle id="map-pin" r="7.5" stroke="#fff" stroke-width=".7"/>
       </defs>
       <g class="land">
         <path d="M30 25l18-9 23 2 19-9 24 7 21-1 17 6-6 9-14 3-9 13-10 1-8 11-7-2-8-8-12-2-12-12-19-5-13 4z"/>
